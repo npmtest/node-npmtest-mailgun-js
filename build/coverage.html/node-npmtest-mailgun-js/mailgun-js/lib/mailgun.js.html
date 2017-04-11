@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-mailgun-js/mailgun-js/lib/mailgun.js</title>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            margin:0; padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica;
+            font-size: 10pt;
+        }
+        div.header, div.footer {
+            background: #eee;
+            padding: 1em;
+        }
+        div.header {
+            height: 160px;
+            padding: 0 1em 0 1em;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #666;
+            width: 100%;
+        }
+        div.footer {
+            border-top: 1px solid #666;
+        }
+        div.body {
+            margin-top: 170px;
+        }
+        div.meta {
+            font-size: 90%;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 12pt;
+        }
+        h2 {
+            font-size: 10pt;
+        }
+        pre {
+            font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            tab-size: 2;
+        }
+
+        div.path { font-size: 110%; }
+        div.path a:link, div.path a:visited { color: #000; }
+        table.coverage { border-collapse: collapse; margin:0; padding: 0 }
+
+        table.coverage td {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            vertical-align: top;
+        }
+        table.coverage td.line-count {
+            width: 50px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        table.coverage td.line-coverage {
+            color: #777 !important;
+            text-align: right;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+        }
+
+        table.coverage td.text {
+        }
+
+        table.coverage td span.cline-any {
+            display: inline-block;
+            padding: 0 5px;
+            width: 40px;
+        }
+        table.coverage td span.cline-neutral {
+            background: #eee;
+        }
+        table.coverage td span.cline-yes {
+            background: #b5d592;
+            color: #999;
+        }
+        table.coverage td span.cline-no {
+            background: #fc8c84;
+        }
+
+        .cstat-yes { color: #111; }
+        .cstat-no { background: #fc8c84; color: #111; }
+        .fstat-no { background: #ffc520; color: #111 !important; }
+        .cbranch-no { background:  yellow !important; color: #111; }
+
+        .cstat-skip { background: #ddd; color: #111; }
+        .fstat-skip { background: #ddd; color: #111 !important; }
+        .cbranch-skip { background: #ddd !important; color: #111; }
+
+        .missing-if-branch {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: black;
+            color: yellow;
+        }
+
+        .skip-if-branch {
+            display: none;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: #ccc;
+            color: white;
+        }
+
+        .missing-if-branch .typ, .skip-if-branch .typ {
+            color: inherit !important;
+        }
+
+        .entity, .metric { font-weight: bold; }
+        .metric { display: inline-block; border: 1px solid #333; padding: 0.3em; background: white; }
+        .metric small { font-size: 80%; font-weight: normal; color: #666; }
+
+        div.coverage-summary table { border-collapse: collapse; margin: 3em; font-size: 110%; }
+        div.coverage-summary td, div.coverage-summary table  th { margin: 0; padding: 0.25em 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; }
+        div.coverage-summary th { text-align: left; border: 1px solid #666; background: #eee; font-weight: normal; }
+        div.coverage-summary th.file { border-right: none !important; }
+        div.coverage-summary th.pic { border-left: none !important; text-align: right; }
+        div.coverage-summary th.pct { border-right: none !important; }
+        div.coverage-summary th.abs { border-left: none !important; text-align: right; }
+        div.coverage-summary td.pct { text-align: right; border-left: 1px solid #666; }
+        div.coverage-summary td.abs { text-align: right; font-size: 90%; color: #444; border-right: 1px solid #666; }
+        div.coverage-summary td.file { text-align: right; border-left: 1px solid #666; white-space: nowrap;  }
+        div.coverage-summary td.pic { min-width: 120px !important;  }
+        div.coverage-summary a:link { color: #000; }
+        div.coverage-summary a:visited { color: #333; }
+        div.coverage-summary tfoot td { border-top: 1px solid #666; }
+
+        div.coverage-summary .yui3-datatable-sort-indicator, div.coverage-summary .dummy-sort-indicator {
+            height: 10px;
+            width: 7px;
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+        div.coverage-summary .yui3-datatable-sort-indicator {
+            background: no-repeat scroll 0 0 transparent;
+        }
+        div.coverage-summary .yui3-datatable-sorted .yui3-datatable-sort-indicator {
+            background-position: 0 -20px;
+        }
+        div.coverage-summary .yui3-datatable-sorted-desc .yui3-datatable-sort-indicator {
+            background-position: 0 -10px;
+        }
+
+        .high { background: #b5d592 !important; }
+        .medium { background: #ffe87c !important; }
+        .low { background: #fc8c84 !important; }
+
+        span.cover-fill, span.cover-empty {
+            display:inline-block;
+            border:1px solid #444;
+            background: white;
+            height: 12px;
+        }
+        span.cover-fill {
+            background: #ccc;
+            border-right: 1px solid #444;
+        }
+        span.cover-empty {
+            background: white;
+            border-left: none;
+        }
+        span.cover-full {
+            border-right: none !important;
+        }
+        pre.prettyprint {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .com { color: #999 !important; }
+        .ignore-none { color: #999; font-weight: normal; }
+
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1 style="font-weight: bold;">
+        <a href="https://github.com/npmtest/node-npmtest-mailgun-js">npmtest-mailgun-js (v0.0.1)</a>
+    </h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-mailgun-js/mailgun-js/lib/mailgun.js</span></h1>
+    <h2>
+        
+        Statements: <span class="metric">24.74% <small>(24 / 97)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Branches: <span class="metric">0% <small>(0 / 41)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Functions: <span class="metric">0% <small>(0 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Lines: <span class="metric">24.74% <small>(24 / 97)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-mailgun-js/mailgun-js/lib/</a> &#187; mailgun.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var tsscmp = require('tsscmp');
+var crypto = require('crypto');
+&nbsp;
+var Attachment = require('./attachment');
+var Request = require('./request');
+var builder = require('./build');
+var resources = require('./schema').definitions;
+&nbsp;
+var mailgunExpirey = 15 * 60 * 1000;
+var mailgunHashType = 'sha256';
+var mailgunSignatureEncoding = 'hex';
+&nbsp;
+var Mailgun = <span class="fstat-no" title="function not covered" >function (options) {</span>
+<span class="cstat-no" title="statement not covered" >  if(!options.apiKey){</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error('apiKey value must be defined!'); </span>
+  }
+<span class="cstat-no" title="statement not covered" >  this.username = 'api';</span>
+<span class="cstat-no" title="statement not covered" >  this.apiKey = options.apiKey;</span>
+<span class="cstat-no" title="statement not covered" >  this.publicApiKey = options.publicApiKey;</span>
+<span class="cstat-no" title="statement not covered" >  this.domain = options.domain;</span>
+<span class="cstat-no" title="statement not covered" >  this.auth = [this.username, this.apiKey].join(':');</span>
+<span class="cstat-no" title="statement not covered" >  this.mute = options.mute || false;</span>
+<span class="cstat-no" title="statement not covered" >  this.timeout = options.timeout;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  this.host = options.host || 'api.mailgun.net';</span>
+<span class="cstat-no" title="statement not covered" >  this.endpoint = options.endpoint || '/v3';</span>
+<span class="cstat-no" title="statement not covered" >  this.protocol = options.protocol || 'https:';</span>
+<span class="cstat-no" title="statement not covered" >  this.port = options.port || 443;</span>
+<span class="cstat-no" title="statement not covered" >  this.retry = options.retry || 1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (options.proxy) {</span>
+<span class="cstat-no" title="statement not covered" >    this.proxy = options.proxy;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  this.options = {</span>
+    host: this.host,
+    endpoint: this.endpoint,
+    protocol: this.protocol,
+    port: this.port,
+    auth: this.auth,
+    proxy: this.proxy,
+    timeout: this.timeout,
+    retry: this.retry
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  this.mailgunTokens = {};</span>
+};
+&nbsp;
+Mailgun.prototype.getDomain = <span class="fstat-no" title="function not covered" >function (method, resource) {</span>
+<span class="cstat-no" title="statement not covered" >  var d = this.domain;</span>
+&nbsp;
+  //filter out API calls that do not require a domain specified
+<span class="cstat-no" title="statement not covered" >  if ((resource.indexOf('/routes') &gt;= 0)</span>
+    || (resource.indexOf('/lists') &gt;= 0)
+    || (resource.indexOf('/address') &gt;= 0)
+    || (resource.indexOf('/domains') &gt;= 0 )) {
+<span class="cstat-no" title="statement not covered" >    d = '';</span>
+  }
+  else <span class="cstat-no" title="statement not covered" >if ((resource.indexOf('/messages') &gt;= 0)</span>
+    &amp;&amp; (method === 'GET' || method === 'DELETE')) {
+<span class="cstat-no" title="statement not covered" >    d = 'domains/' + this.domain;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return d;</span>
+};
+&nbsp;
+Mailgun.prototype.getRequestOptions = <span class="fstat-no" title="function not covered" >function (resource) {</span>
+<span class="cstat-no" title="statement not covered" >  var o = this.options;</span>
+&nbsp;
+  // use public API key if we have it for the routes that require it
+<span class="cstat-no" title="statement not covered" >  if (resource.indexOf('/address') &gt;= 0 &amp;&amp; this.publicApiKey) {</span>
+<span class="cstat-no" title="statement not covered" >    var copy = Object.assign({}, this.options);</span>
+<span class="cstat-no" title="statement not covered" >    copy.auth = [this.username, this.publicApiKey].join(':');</span>
+<span class="cstat-no" title="statement not covered" >    o = copy;</span>
+  }
+ 
+<span class="cstat-no" title="statement not covered" >  return o;</span>
+};
+&nbsp;
+Mailgun.prototype.request = <span class="fstat-no" title="function not covered" >function (method, resource, data, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var fullpath = resource;</span>
+<span class="cstat-no" title="statement not covered" >  var domain = this.getDomain(method, resource);</span>
+<span class="cstat-no" title="statement not covered" >  if (domain) {</span>
+<span class="cstat-no" title="statement not covered" >    fullpath = '/'.concat(domain, resource);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  var req = new Request(this.options);</span>
+<span class="cstat-no" title="statement not covered" >  return req.request(method, fullpath, data, fn);</span>
+};
+&nbsp;
+Mailgun.prototype.post = <span class="fstat-no" title="function not covered" >function (path, data, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var req = new Request(this.options);</span>
+<span class="cstat-no" title="statement not covered" >  return req.request('POST', path, data, fn);</span>
+};
+&nbsp;
+Mailgun.prototype.get = <span class="fstat-no" title="function not covered" >function (path, data, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var req = new Request(this.options);</span>
+<span class="cstat-no" title="statement not covered" >  return req.request('GET', path, data, fn);</span>
+};
+&nbsp;
+Mailgun.prototype.delete = <span class="fstat-no" title="function not covered" >function (path, data, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var req = new Request(this.options);</span>
+<span class="cstat-no" title="statement not covered" >  return req.request('DELETE', path, data, fn);</span>
+};
+&nbsp;
+Mailgun.prototype.put = <span class="fstat-no" title="function not covered" >function (path, data, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var req = new Request(this.options);</span>
+<span class="cstat-no" title="statement not covered" >  return req.request('PUT', path, data, fn);</span>
+};
+&nbsp;
+&nbsp;
+Mailgun.prototype.validateWebhook = <span class="fstat-no" title="function not covered" >function (timestamp, token, signature) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  var adjustedTimestamp = parseInt(timestamp, 10) * 1000;</span>
+<span class="cstat-no" title="statement not covered" >  var fresh = (Math.abs(Date.now() - adjustedTimestamp) &lt; mailgunExpirey);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!fresh) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.mute) {</span>
+<span class="cstat-no" title="statement not covered" >      console.error('[mailgun] Stale Timestamp: this may be an attack');</span>
+<span class="cstat-no" title="statement not covered" >      console.error('[mailgun] However, this is most likely your fault\n');</span>
+<span class="cstat-no" title="statement not covered" >      console.error('[mailgun] run `ntpdate ntp.ubuntu.com` and check your system clock\n');</span>
+<span class="cstat-no" title="statement not covered" >      console.error('[mailgun] System Time: ' + new Date().toString());</span>
+<span class="cstat-no" title="statement not covered" >      console.error('[mailgun] Mailgun Time: ' + new Date(adjustedTimestamp).toString(), timestamp);</span>
+<span class="cstat-no" title="statement not covered" >      console.error('[mailgun] Delta: ' + (Date.now() - adjustedTimestamp));</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (this.mailgunTokens[token]) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.mute) {</span>
+<span class="cstat-no" title="statement not covered" >      console.error('[mailgun] Replay Attack');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  this.mailgunTokens[token] = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >    delete self.mailgunTokens[token];</span>
+  }, mailgunExpirey + (5 * 1000));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return tsscmp(</span>
+    signature
+    , crypto.createHmac(mailgunHashType, self.apiKey)
+      .update(new Buffer(timestamp + token, 'utf-8'))
+      .digest(mailgunSignatureEncoding)
+  );
+};
+&nbsp;
+Mailgun.prototype.validate = <span class="fstat-no" title="function not covered" >function (address, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var resource = `/address/validate`;</span>
+<span class="cstat-no" title="statement not covered" >  var options = this.getRequestOptions(resource);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  var req = new Request(options);</span>
+<span class="cstat-no" title="statement not covered" >  return req.request('GET', resource, { address }, fn);</span>
+};
+&nbsp;
+Mailgun.prototype.parse = <span class="fstat-no" title="function not covered" >function (addresses, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var resource = `/address/parse`;</span>
+<span class="cstat-no" title="statement not covered" >  var options = this.getRequestOptions(resource);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  var req = new Request(options);</span>
+<span class="cstat-no" title="statement not covered" >  return req.request('GET', resource, { addresses }, fn);</span>
+};
+&nbsp;
+builder.build(Mailgun, resources);
+&nbsp;
+Mailgun.prototype.Attachment = Attachment;
+&nbsp;
+Mailgun.prototype.Mailgun = Mailgun;
+&nbsp;
+module.exports = <span class="fstat-no" title="function not covered" >function (options) {</span>
+<span class="cstat-no" title="statement not covered" >  return new Mailgun(options);</span>
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 20:58:59 GMT+0000 (UTC)</div>
+</div>
+</body>
+</html>
