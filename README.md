@@ -1,7 +1,7 @@
 # test coverage for  [mailgun-js (v0.10.1)](https://github.com/bojand/mailgun-js)  [![npm package](https://img.shields.io/npm/v/npmtest-mailgun-js.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mailgun-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mailgun-js.svg)](https://travis-ci.org/npmtest/node-npmtest-mailgun-js)
 #### Simple Node.js helper module for Mailgun API
 
-[![NPM](https://nodei.co/npm/mailgun-js.png?downloads=true)](https://www.npmjs.com/package/mailgun-js)
+[![NPM](https://nodei.co/npm/mailgun-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mailgun-js)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-mailgun-js/tree/alpha)|
 |--:|:--|
@@ -9,11 +9,17 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-mailgun-js/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-mailgun-js/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-mailgun-js/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-mailgun-js/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-mailgun-js/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-mailgun-js/build/coverage.html/index.html)
+- [https://npmtest.github.io/node-npmtest-mailgun-js/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-mailgun-js/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-mailgun-js/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-mailgun-js%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-mailgun-js/build/test-report.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-mailgun-js/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-mailgun-js/build/coverage.html/index.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-mailgun-js/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-mailgun-js%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mailgun-js/build/apidoc.html)
+- [https://npmtest.github.io/node-npmtest-mailgun-js/build/test-report.html](https://npmtest.github.io/node-npmtest-mailgun-js/build/test-report.html)
+
+[![test-report](https://npmtest.github.io/node-npmtest-mailgun-js/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-mailgun-js/build/test-report.html)
+
+- [https://npmdoc.github.io/node-npmdoc-mailgun-js/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-mailgun-js/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-mailgun-js/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mailgun-js/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-mailgun-js/build/screenCapture.npmPackageListing.svg)
 
@@ -27,8 +33,7 @@
 
 {
     "author": {
-        "name": "Bojan Djurkovic",
-        "email": "bojan@onelobby.com"
+        "name": "Bojan Djurkovic"
     },
     "bugs": {
         "url": "http://github.com/bojand/mailgun-js/issues"
@@ -71,13 +76,11 @@
     "main": "./lib/mailgun.js",
     "maintainers": [
         {
-            "name": "bojand",
-            "email": "dbojan@gmail.com"
+            "name": "bojand"
         }
     ],
     "name": "mailgun-js",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/bojand/mailgun-js.git"
