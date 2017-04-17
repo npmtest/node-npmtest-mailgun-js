@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-mailgun-js/mailgun-js/lib/request.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-mailgun-js/node_modules/mailgun-js/lib/request.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-mailgun-js">npmtest-mailgun-js (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-mailgun-js/mailgun-js/lib/request.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-mailgun-js/node_modules/mailgun-js/lib/request.js</span></h1>
     <h2>
         
         Statements: <span class="metric">13.98% <small>(26 / 186)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-mailgun-js/mailgun-js/lib/</a> &#187; request.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-mailgun-js/node_modules/mailgun-js/lib/</a> » request.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -941,63 +939,63 @@ var promisifyCall = require('promisify-call');
 &nbsp;
 var debug = require('debug')('mailgun-js');
 &nbsp;
-<span class="fstat-no" title="function not covered" >function noop () {</span>
+<span class="fstat-no" title="function not covered">function noop () {</span>
 };
 &nbsp;
-<span class="fstat-no" title="function not covered" >function isOk(i) {</span>
-<span class="cstat-no" title="statement not covered" >  return typeof i !== 'undefined' &amp;&amp; i !== null;</span>
+<span class="fstat-no" title="function not covered">function isOk(i) {</span>
+<span class="cstat-no" title="statement not covered">  return typeof i !== 'undefined' &amp;&amp; i !== null;</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function Request(options) {</span>
-<span class="cstat-no" title="statement not covered" >  this.host = options.host;</span>
-<span class="cstat-no" title="statement not covered" >  this.protocol = options.protocol;</span>
-<span class="cstat-no" title="statement not covered" >  this.port = options.port;</span>
-<span class="cstat-no" title="statement not covered" >  this.endpoint = options.endpoint;</span>
-<span class="cstat-no" title="statement not covered" >  this.auth = options.auth;</span>
-<span class="cstat-no" title="statement not covered" >  this.proxy = options.proxy;</span>
-<span class="cstat-no" title="statement not covered" >  this.timeout = options.timeout;</span>
-<span class="cstat-no" title="statement not covered" >  this.retry = options.retry || 1;</span>
+<span class="fstat-no" title="function not covered">function Request(options) {</span>
+<span class="cstat-no" title="statement not covered">  this.host = options.host;</span>
+<span class="cstat-no" title="statement not covered">  this.protocol = options.protocol;</span>
+<span class="cstat-no" title="statement not covered">  this.port = options.port;</span>
+<span class="cstat-no" title="statement not covered">  this.endpoint = options.endpoint;</span>
+<span class="cstat-no" title="statement not covered">  this.auth = options.auth;</span>
+<span class="cstat-no" title="statement not covered">  this.proxy = options.proxy;</span>
+<span class="cstat-no" title="statement not covered">  this.timeout = options.timeout;</span>
+<span class="cstat-no" title="statement not covered">  this.retry = options.retry || 1;</span>
 }
 &nbsp;
-Request.prototype._request = <span class="fstat-no" title="function not covered" >function (method, resource, data, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+Request.prototype._request = <span class="fstat-no" title="function not covered">function (method, resource, data, fn) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var path = ''.concat(this.endpoint, resource);</span>
+<span class="cstat-no" title="statement not covered">  var path = ''.concat(this.endpoint, resource);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var params = this.prepareData(data);</span>
+<span class="cstat-no" title="statement not covered">  var params = this.prepareData(data);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.payload = '';</span>
+<span class="cstat-no" title="statement not covered">  this.payload = '';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var isMIME = path.indexOf('/messages.mime') &gt;= 0;</span>
+<span class="cstat-no" title="statement not covered">  var isMIME = path.indexOf('/messages.mime') &gt;= 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.headers = {};</span>
-<span class="cstat-no" title="statement not covered" >  if (method === 'GET' || method === 'DELETE') {</span>
-<span class="cstat-no" title="statement not covered" >    this.payload = qs.stringify(params);</span>
-<span class="cstat-no" title="statement not covered" >    if (this.payload) <span class="cstat-no" title="statement not covered" >path = path.concat('?', this.payload);</span></span>
+<span class="cstat-no" title="statement not covered">  this.headers = {};</span>
+<span class="cstat-no" title="statement not covered">  if (method === 'GET' || method === 'DELETE') {</span>
+<span class="cstat-no" title="statement not covered">    this.payload = qs.stringify(params);</span>
+<span class="cstat-no" title="statement not covered">    if (this.payload) <span class="cstat-no" title="statement not covered">path = path.concat('?', this.payload);</span></span>
   }
   else {
-<span class="cstat-no" title="statement not covered" >    this.headers['Content-Type'] = isMIME ? 'multipart/form-data' : 'application/x-www-form-urlencoded';</span>
+<span class="cstat-no" title="statement not covered">    this.headers['Content-Type'] = isMIME ? 'multipart/form-data' : 'application/x-www-form-urlencoded';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (params &amp;&amp; (params.attachment || params.inline || (isMIME &amp;&amp; params.message))) {</span>
-<span class="cstat-no" title="statement not covered" >      this.prepareFormData(params);</span>
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; (params.attachment || params.inline || (isMIME &amp;&amp; params.message))) {</span>
+<span class="cstat-no" title="statement not covered">      this.prepareFormData(params);</span>
     }
     else {
-<span class="cstat-no" title="statement not covered" >      this.payload = qs.stringify(params);</span>
-<span class="cstat-no" title="statement not covered" >      var length = this.payload ? Buffer.byteLength(this.payload) : 0;</span>
-<span class="cstat-no" title="statement not covered" >      this.headers['Content-Length'] = length;</span>
+<span class="cstat-no" title="statement not covered">      this.payload = qs.stringify(params);</span>
+<span class="cstat-no" title="statement not covered">      var length = this.payload ? Buffer.byteLength(this.payload) : 0;</span>
+<span class="cstat-no" title="statement not covered">      this.headers['Content-Length'] = length;</span>
     }
   }
 &nbsp;
   // check for MIME is true in case of messages GET
-<span class="cstat-no" title="statement not covered" >  if (method === 'GET' &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered">  if (method === 'GET' &amp;&amp;</span>
     path.indexOf('/messages') &gt;= 0 &amp;&amp;
     params &amp;&amp; params.MIME === true) {
-<span class="cstat-no" title="statement not covered" >    this.headers.Accept = 'message/rfc2822';</span>
+<span class="cstat-no" title="statement not covered">    this.headers.Accept = 'message/rfc2822';</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  debug('%s %s', method, path);</span>
+<span class="cstat-no" title="statement not covered">  debug('%s %s', method, path);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var opts = {</span>
+<span class="cstat-no" title="statement not covered">  var opts = {</span>
     hostname: this.host,
     port: this.port,
     protocol: this.protocol,
@@ -1009,287 +1007,288 @@ Request.prototype._request = <span class="fstat-no" title="function not covered"
     timeout: this.timeout
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this.retry &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >    retry(this.retry, <span class="fstat-no" title="function not covered" >function (retryCb) {</span></span>
-<span class="cstat-no" title="statement not covered" >      self.callback = retryCb;</span>
-<span class="cstat-no" title="statement not covered" >      self.performRequest(opts);</span>
+<span class="cstat-no" title="statement not covered">  if (this.retry &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered">    retry(this.retry, <span class="fstat-no" title="function not covered">function (retryCb) {</span></span>
+<span class="cstat-no" title="statement not covered">      self.callback = retryCb;</span>
+<span class="cstat-no" title="statement not covered">      self.performRequest(opts);</span>
     }, fn);
   }
   else {
-<span class="cstat-no" title="statement not covered" >    this.callback = fn;</span>
-<span class="cstat-no" title="statement not covered" >    this.performRequest(opts);</span>
+<span class="cstat-no" title="statement not covered">    this.callback = fn;</span>
+<span class="cstat-no" title="statement not covered">    this.performRequest(opts);</span>
   }
 }
 &nbsp;
-Request.prototype.request = <span class="fstat-no" title="function not covered" >function (method, resource, data, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  if (typeof data === 'function' &amp;&amp; !fn) {</span>
-<span class="cstat-no" title="statement not covered" >    fn = data;</span>
-<span class="cstat-no" title="statement not covered" >    data = {};</span>
+Request.prototype.request = <span class="fstat-no" title="function not covered">function (method, resource, data, fn) {</span>
+<span class="cstat-no" title="statement not covered">  if (typeof data === 'function' &amp;&amp; !fn) {</span>
+<span class="cstat-no" title="statement not covered">    fn = data;</span>
+<span class="cstat-no" title="statement not covered">    data = {};</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!data) {</span>
-<span class="cstat-no" title="statement not covered" >    data = {}</span>
+<span class="cstat-no" title="statement not covered">  if (!data) {</span>
+<span class="cstat-no" title="statement not covered">    data = {}</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return promisifyCall(this, this._request, method, resource, data, fn);</span>
+<span class="cstat-no" title="statement not covered">  return promisifyCall(this, this._request, method, resource, data, fn);</span>
 };
 &nbsp;
-<span class="fstat-no" title="function not covered" >function getDataValue(key, input) {</span>
-<span class="cstat-no" title="statement not covered" >  if (isSpecialParam(key) &amp;&amp; (typeof input === 'object')) {</span>
-<span class="cstat-no" title="statement not covered" >    return JSON.stringify(input);</span>
+<span class="fstat-no" title="function not covered">function getDataValue(key, input) {</span>
+<span class="cstat-no" title="statement not covered">  if (isSpecialParam(key) &amp;&amp; (typeof input === 'object')) {</span>
+<span class="cstat-no" title="statement not covered">    return JSON.stringify(input);</span>
   }
-  else <span class="cstat-no" title="statement not covered" >if (typeof input === 'number' || typeof input === 'boolean') {</span>
-<span class="cstat-no" title="statement not covered" >    return input.toString();</span>
+  else <span class="cstat-no" title="statement not covered">if (typeof input === 'number' || typeof input === 'boolean') {</span>
+<span class="cstat-no" title="statement not covered">    return input.toString();</span>
   }
   else {
-<span class="cstat-no" title="statement not covered" >    return input;</span>
+<span class="cstat-no" title="statement not covered">    return input;</span>
   }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function isSpecialParam(paramKey) {</span>
-<span class="cstat-no" title="statement not covered" >  var key = paramKey.toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >  return ((key === 'vars' || key === 'members' || key === 'recipient-variables') || (key.indexOf('v:') === 0));</span>
+<span class="fstat-no" title="function not covered">function isSpecialParam(paramKey) {</span>
+<span class="cstat-no" title="statement not covered">  var key = paramKey.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered">  return ((key === 'vars' || key === 'members' || key === 'recipient-variables') || (key.indexOf('v:') === 0));</span>
 }
 &nbsp;
-Request.prototype.prepareData = <span class="fstat-no" title="function not covered" >function (data) {</span>
-<span class="cstat-no" title="statement not covered" >  var params = {};</span>
+Request.prototype.prepareData = <span class="fstat-no" title="function not covered">function (data) {</span>
+<span class="cstat-no" title="statement not covered">  var params = {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  for (var key in data) {</span>
-<span class="cstat-no" title="statement not covered" >    if (key !== 'attachment' &amp;&amp; key !== 'inline' &amp;&amp; isOk(data[key])) {</span>
-<span class="cstat-no" title="statement not covered" >      var value = getDataValue(key, data[key]);</span>
-<span class="cstat-no" title="statement not covered" >      if(isOk(value)) {</span>
-<span class="cstat-no" title="statement not covered" >        params[key] = value;</span>
+<span class="cstat-no" title="statement not covered">  for (var key in data) {</span>
+<span class="cstat-no" title="statement not covered">    if (key !== 'attachment' &amp;&amp; key !== 'inline' &amp;&amp; isOk(data[key])) {</span>
+<span class="cstat-no" title="statement not covered">      var value = getDataValue(key, data[key]);</span>
+<span class="cstat-no" title="statement not covered">      if(isOk(value)) {</span>
+<span class="cstat-no" title="statement not covered">        params[key] = value;</span>
       }
     }
     else {
-<span class="cstat-no" title="statement not covered" >      params[key] = data[key];</span>
+<span class="cstat-no" title="statement not covered">      params[key] = data[key];</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return params;</span>
+<span class="cstat-no" title="statement not covered">  return params;</span>
 };
 &nbsp;
-Request.prototype.prepareFormData = <span class="fstat-no" title="function not covered" >function (data) {</span>
-<span class="cstat-no" title="statement not covered" >  this.form = new FormData();</span>
-<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+Request.prototype.prepareFormData = <span class="fstat-no" title="function not covered">function (data) {</span>
+<span class="cstat-no" title="statement not covered">  this.form = new FormData();</span>
+<span class="cstat-no" title="statement not covered">  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  for (var key in data) {</span>
-<span class="cstat-no" title="statement not covered" >    var obj = data[key];</span>
-<span class="cstat-no" title="statement not covered" >    if(isOk(obj)) {</span>
-<span class="cstat-no" title="statement not covered" >      if (key === 'attachment' || key === 'inline') {</span>
-<span class="cstat-no" title="statement not covered" >        if (Array.isArray(obj)) {</span>
-<span class="cstat-no" title="statement not covered" >          for (var i = 0; i &lt; obj.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            this.handleAttachmentObject(key, obj[i]);</span>
+<span class="cstat-no" title="statement not covered">  for (var key in data) {</span>
+<span class="cstat-no" title="statement not covered">    var obj = data[key];</span>
+<span class="cstat-no" title="statement not covered">    if(isOk(obj)) {</span>
+<span class="cstat-no" title="statement not covered">      if (key === 'attachment' || key === 'inline') {</span>
+<span class="cstat-no" title="statement not covered">        if (Array.isArray(obj)) {</span>
+<span class="cstat-no" title="statement not covered">          for (var i = 0; i &lt; obj.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">            this.handleAttachmentObject(key, obj[i]);</span>
           }
         }
         else {
-<span class="cstat-no" title="statement not covered" >          this.handleAttachmentObject(key, obj);</span>
+<span class="cstat-no" title="statement not covered">          this.handleAttachmentObject(key, obj);</span>
         }
       }
-      else <span class="cstat-no" title="statement not covered" >if (key === 'message') {</span>
-<span class="cstat-no" title="statement not covered" >        this.handleMimeObject(key, obj);</span>
+      else <span class="cstat-no" title="statement not covered">if (key === 'message') {</span>
+<span class="cstat-no" title="statement not covered">        this.handleMimeObject(key, obj);</span>
       }
-      else <span class="cstat-no" title="statement not covered" >if (Array.isArray(obj)) {</span>
-<span class="fstat-no" title="function not covered" >        function appendKey(element) {</span>
-<span class="cstat-no" title="statement not covered" >          if(isOk(element)) {</span>
-<span class="cstat-no" title="statement not covered" >            var value = getDataValue(key, element);</span>
-<span class="cstat-no" title="statement not covered" >            if(isOk(value)) {</span>
-<span class="cstat-no" title="statement not covered" >              self.form.append(key, value);</span>
+      else <span class="cstat-no" title="statement not covered">if (Array.isArray(obj)) {</span>
+<span class="fstat-no" title="function not covered">        function appendKey(element) {</span>
+<span class="cstat-no" title="statement not covered">          if(isOk(element)) {</span>
+<span class="cstat-no" title="statement not covered">            var value = getDataValue(key, element);</span>
+<span class="cstat-no" title="statement not covered">            if(isOk(value)) {</span>
+<span class="cstat-no" title="statement not covered">              self.form.append(key, value);</span>
             }
           }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        obj.forEach(appendKey);</span>
+<span class="cstat-no" title="statement not covered">        obj.forEach(appendKey);</span>
       }
       else {
-<span class="cstat-no" title="statement not covered" >        var value = getDataValue(key, obj);</span>
-<span class="cstat-no" title="statement not covered" >        if(isOk(value)) {</span>
-<span class="cstat-no" title="statement not covered" >          this.form.append(key, value);</span>
+<span class="cstat-no" title="statement not covered">        var value = getDataValue(key, obj);</span>
+<span class="cstat-no" title="statement not covered">        if(isOk(value)) {</span>
+<span class="cstat-no" title="statement not covered">          this.form.append(key, value);</span>
         }
       }
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.headers = this.form.getHeaders();</span>
+<span class="cstat-no" title="statement not covered">  this.headers = this.form.getHeaders();</span>
 };
 &nbsp;
-Request.prototype.handleMimeObject = <span class="fstat-no" title="function not covered" >function (key, obj) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this;</span>
-<span class="cstat-no" title="statement not covered" >  if (typeof obj === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >    if (fs.existsSync(obj) &amp;&amp; fs.statSync(obj).isFile()) {</span>
-<span class="cstat-no" title="statement not covered" >      self.form.append('message', fs.createReadStream(obj));</span>
+Request.prototype.handleMimeObject = <span class="fstat-no" title="function not covered">function (key, obj) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this;</span>
+<span class="cstat-no" title="statement not covered">  if (typeof obj === 'string') {</span>
+<span class="cstat-no" title="statement not covered">    if (fs.existsSync(obj) &amp;&amp; fs.statSync(obj).isFile()) {</span>
+<span class="cstat-no" title="statement not covered">      self.form.append('message', fs.createReadStream(obj));</span>
     }
     else {
-<span class="cstat-no" title="statement not covered" >      self.form.append('message', new Buffer(obj), {</span>
+<span class="cstat-no" title="statement not covered">      self.form.append('message', new Buffer(obj), {</span>
         filename: 'message.mime',
         contentType: 'message/rfc822',
         knownLength: obj.length
       });
     }
   }
-  else <span class="cstat-no" title="statement not covered" >if (obj instanceof Readable) {</span>
-<span class="cstat-no" title="statement not covered" >    self.form.append('message', obj);</span>
+  else <span class="cstat-no" title="statement not covered">if (obj instanceof Readable) {</span>
+<span class="cstat-no" title="statement not covered">    self.form.append('message', obj);</span>
   }
 };
 &nbsp;
-Request.prototype.handleAttachmentObject = <span class="fstat-no" title="function not covered" >function (key, obj) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!this.form) <span class="cstat-no" title="statement not covered" >this.form = new FormData();</span></span>
+Request.prototype.handleAttachmentObject = <span class="fstat-no" title="function not covered">function (key, obj) {</span>
+<span class="cstat-no" title="statement not covered">  if (!this.form) <span class="cstat-no" title="statement not covered">this.form = new FormData();</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (Buffer.isBuffer(obj)) {</span>
-<span class="cstat-no" title="statement not covered" >    debug('appending buffer to form data. key: %s', key);</span>
-<span class="cstat-no" title="statement not covered" >    this.form.append(key, obj, {</span>
+<span class="cstat-no" title="statement not covered">  if (Buffer.isBuffer(obj)) {</span>
+<span class="cstat-no" title="statement not covered">    debug('appending buffer to form data. key: %s', key);</span>
+<span class="cstat-no" title="statement not covered">    this.form.append(key, obj, {</span>
       filename: 'file'
     });
   }
-  else <span class="cstat-no" title="statement not covered" >if (typeof obj === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >    debug('appending stream to form data. key: %s obj: %s', key, obj);</span>
-<span class="cstat-no" title="statement not covered" >    this.form.append(key, fs.createReadStream(obj));</span>
-  } else <span class="cstat-no" title="statement not covered" >if ((typeof obj === 'object') &amp;&amp; (obj.readable === true)) {</span>
-<span class="cstat-no" title="statement not covered" >    debug('appending readable stream to form data. key: %s obj: %s', key, obj);</span>
-<span class="cstat-no" title="statement not covered" >    this.form.append(key, obj);</span>
-  } else <span class="cstat-no" title="statement not covered" >if ((typeof obj === 'object') &amp;&amp; (obj instanceof Attachment)) {</span>
-<span class="cstat-no" title="statement not covered" >    var attachmentType = obj.getType();</span>
-<span class="cstat-no" title="statement not covered" >    if (attachmentType === 'path') {</span>
-<span class="cstat-no" title="statement not covered" >      debug('appending attachment stream to form data. key: %s data: %s filename: %s', key, obj.data, obj.filename);</span>
-<span class="cstat-no" title="statement not covered" >      this.form.append(key, fs.createReadStream(obj.data), {</span>
+  else <span class="cstat-no" title="statement not covered">if (typeof obj === 'string') {</span>
+<span class="cstat-no" title="statement not covered">    debug('appending stream to form data. key: %s obj: %s', key, obj);</span>
+<span class="cstat-no" title="statement not covered">    this.form.append(key, fs.createReadStream(obj));</span>
+  } else <span class="cstat-no" title="statement not covered">if ((typeof obj === 'object') &amp;&amp; (obj.readable === true)) {</span>
+<span class="cstat-no" title="statement not covered">    debug('appending readable stream to form data. key: %s obj: %s', key, obj);</span>
+<span class="cstat-no" title="statement not covered">    this.form.append(key, obj);</span>
+  } else <span class="cstat-no" title="statement not covered">if ((typeof obj === 'object') &amp;&amp; (obj instanceof Attachment)) {</span>
+<span class="cstat-no" title="statement not covered">    var attachmentType = obj.getType();</span>
+<span class="cstat-no" title="statement not covered">    if (attachmentType === 'path') {</span>
+<span class="cstat-no" title="statement not covered">      debug('appending attachment stream to form data. key: %s data: %s filename: %s', key, obj.data, obj.filename);</span>
+<span class="cstat-no" title="statement not covered">      this.form.append(key, fs.createReadStream(obj.data), {</span>
         filename: obj.filename || 'attached file'
       });
     }
-    else <span class="cstat-no" title="statement not covered" >if (attachmentType === 'buffer') {</span>
-<span class="cstat-no" title="statement not covered" >      debug('appending attachment buffer to form data. key: %s filename: %s', key, obj.filename);</span>
-<span class="cstat-no" title="statement not covered" >      var formOpts = {</span>
+    else <span class="cstat-no" title="statement not covered">if (attachmentType === 'buffer') {</span>
+<span class="cstat-no" title="statement not covered">      debug('appending attachment buffer to form data. key: %s filename: %s', key, obj.filename);</span>
+<span class="cstat-no" title="statement not covered">      var formOpts = {</span>
         filename: obj.filename || 'attached file'
       };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (obj.contentType) {</span>
-<span class="cstat-no" title="statement not covered" >        formOpts.contentType = obj.contentType</span>
+<span class="cstat-no" title="statement not covered">      if (obj.contentType) {</span>
+<span class="cstat-no" title="statement not covered">        formOpts.contentType = obj.contentType</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (obj.knownLength) {</span>
-<span class="cstat-no" title="statement not covered" >        formOpts.knownLength = obj.knownLength</span>
+<span class="cstat-no" title="statement not covered">      if (obj.knownLength) {</span>
+<span class="cstat-no" title="statement not covered">        formOpts.knownLength = obj.knownLength</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      this.form.append(key, obj.data, formOpts);</span>
+<span class="cstat-no" title="statement not covered">      this.form.append(key, obj.data, formOpts);</span>
     }
-    else <span class="cstat-no" title="statement not covered" >if (attachmentType === 'stream') {</span>
-<span class="cstat-no" title="statement not covered" >      if (obj.knownLength &amp;&amp; obj.contentType) {</span>
-<span class="cstat-no" title="statement not covered" >        debug('appending attachment stream to form data. key: %s filename: %s', key, obj.filename);</span>
+    else <span class="cstat-no" title="statement not covered">if (attachmentType === 'stream') {</span>
+<span class="cstat-no" title="statement not covered">      if (obj.knownLength &amp;&amp; obj.contentType) {</span>
+<span class="cstat-no" title="statement not covered">        debug('appending attachment stream to form data. key: %s filename: %s', key, obj.filename);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        this.form.append(key, obj.data, {</span>
+<span class="cstat-no" title="statement not covered">        this.form.append(key, obj.data, {</span>
           filename: obj.filename || 'attached file',
           contentType: obj.contentType,
           knownLength: obj.knownLength
         });
       }
       else {
-<span class="cstat-no" title="statement not covered" >        debug('missing content type or length for attachment stream. key: %s', key);</span>
+<span class="cstat-no" title="statement not covered">        debug('missing content type or length for attachment stream. key: %s', key);</span>
       }
     }
   }
   else {
-<span class="cstat-no" title="statement not covered" >    debug('unknown attachment type. key: %s', key);</span>
+<span class="cstat-no" title="statement not covered">    debug('unknown attachment type. key: %s', key);</span>
   }
 };
 &nbsp;
-Request.prototype.handleResponse = <span class="fstat-no" title="function not covered" >function (res) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this;</span>
-<span class="cstat-no" title="statement not covered" >  var chunks = '';</span>
-<span class="cstat-no" title="statement not covered" >  var error;</span>
+Request.prototype.handleResponse = <span class="fstat-no" title="function not covered">function (res) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this;</span>
+<span class="cstat-no" title="statement not covered">  var chunks = '';</span>
+<span class="cstat-no" title="statement not covered">  var error;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  res.on('data', <span class="fstat-no" title="function not covered" >function (chunk) {</span></span>
-<span class="cstat-no" title="statement not covered" >    chunks += chunk;</span>
+<span class="cstat-no" title="statement not covered">  res.on('data', <span class="fstat-no" title="function not covered">function (chunk) {</span></span>
+<span class="cstat-no" title="statement not covered">    chunks += chunk;</span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  res.on('error', <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >    error = err;</span>
+<span class="cstat-no" title="statement not covered">  res.on('error', <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">    error = err;</span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  res.on('end', <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    var body;</span>
+<span class="cstat-no" title="statement not covered">  res.on('end', <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    var body;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    debug('response status code: %s content type: %s error: %s', res.statusCode, res.headers['content-type'], error);</span>
+<span class="cstat-no" title="statement not covered">    debug('response status code: %s content type: %s error: %s', res.statusCode, res.headers['content-type'], error);</span>
 &nbsp;
     // FIXME: An ugly hack to overcome invalid response type in mailgun api (see http://bit.ly/1eF30fU).
     // We skip content-type validation for 'campaings' endpoint assuming it is JSON.
-<span class="cstat-no" title="statement not covered" >    var skipContentTypeCheck = res.req &amp;&amp; res.req.path &amp;&amp; res.req.path.match(/\/campaigns/);</span>
-<span class="cstat-no" title="statement not covered" >    var isJSON = res.headers['content-type'] &amp;&amp; res.headers['content-type'].indexOf('application/json') &gt;= 0;</span>
-<span class="cstat-no" title="statement not covered" >    if (chunks &amp;&amp; !error &amp;&amp; (skipContentTypeCheck || isJSON)) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        body = JSON.parse(chunks);</span>
+<span class="cstat-no" title="statement not covered">    var skipContentTypeCheck = res.req &amp;&amp; res.req.path &amp;&amp; res.req.path.match(/\/campaigns/);</span>
+<span class="cstat-no" title="statement not covered">    var isJSON = res.headers['content-type'] &amp;&amp; res.headers['content-type'].indexOf('application/json') &gt;= 0;</span>
+<span class="cstat-no" title="statement not covered">    if (chunks &amp;&amp; !error &amp;&amp; (skipContentTypeCheck || isJSON)) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        body = JSON.parse(chunks);</span>
       } catch (e) {
-<span class="cstat-no" title="statement not covered" >        error = e;</span>
+<span class="cstat-no" title="statement not covered">        error = e;</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (process.env.DEBUG_MAILGUN_FORCE_RETRY) {</span>
-<span class="cstat-no" title="statement not covered" >      error = new Error('Force retry error');</span>
-<span class="cstat-no" title="statement not covered" >      delete process.env.DEBUG_MAILGUN_FORCE_RETRY;</span>
+<span class="cstat-no" title="statement not covered">    if (process.env.DEBUG_MAILGUN_FORCE_RETRY) {</span>
+<span class="cstat-no" title="statement not covered">      error = new Error('Force retry error');</span>
+<span class="cstat-no" title="statement not covered">      delete process.env.DEBUG_MAILGUN_FORCE_RETRY;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!error &amp;&amp; res.statusCode !== 200) {</span>
-<span class="cstat-no" title="statement not covered" >      var msg = body ? body.message || body.response : body || chunks || res.statusMessage;</span>
-<span class="cstat-no" title="statement not covered" >      error = new Error(msg);</span>
-<span class="cstat-no" title="statement not covered" >      error.statusCode = res.statusCode;</span>
+<span class="cstat-no" title="statement not covered">    if (!error &amp;&amp; res.statusCode !== 200) {</span>
+<span class="cstat-no" title="statement not covered">      var msg = body ? body.message || body.response : body || chunks || res.statusMessage;</span>
+<span class="cstat-no" title="statement not covered">      error = new Error(msg);</span>
+<span class="cstat-no" title="statement not covered">      error.statusCode = res.statusCode;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return self.callback(error, body);</span>
+<span class="cstat-no" title="statement not covered">    return self.callback(error, body);</span>
   });
 };
 &nbsp;
-Request.prototype.performRequest = <span class="fstat-no" title="function not covered" >function (options) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this;</span>
-<span class="cstat-no" title="statement not covered" >  var method = options.method;</span>
+Request.prototype.performRequest = <span class="fstat-no" title="function not covered">function (options) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this;</span>
+<span class="cstat-no" title="statement not covered">  var method = options.method;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this.form &amp;&amp; (method === 'POST' || method === 'PUT' || method === 'PATCH')) {</span>
+<span class="cstat-no" title="statement not covered">  if (this.form &amp;&amp; (method === 'POST' || method === 'PUT' || method === 'PATCH')) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.form.submit(options, <span class="fstat-no" title="function not covered" >function (err, res) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (err) {</span>
-<span class="cstat-no" title="statement not covered" >        return self.callback(err);</span>
+<span class="cstat-no" title="statement not covered">    this.form.submit(options, <span class="fstat-no" title="function not covered">function (err, res) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (err) {</span>
+<span class="cstat-no" title="statement not covered">        return self.callback(err);</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return self.handleResponse(res);</span>
+<span class="cstat-no" title="statement not covered">      return self.handleResponse(res);</span>
     });
   }
   else {
-<span class="cstat-no" title="statement not covered" >    var req;</span>
+<span class="cstat-no" title="statement not covered">    var req;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (options.protocol === 'http:') {</span>
-<span class="cstat-no" title="statement not covered" >      req = http.request(options, <span class="fstat-no" title="function not covered" >function (res) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return self.handleResponse(res);</span>
+<span class="cstat-no" title="statement not covered">    if (options.protocol === 'http:') {</span>
+<span class="cstat-no" title="statement not covered">      req = http.request(options, <span class="fstat-no" title="function not covered">function (res) {</span></span>
+<span class="cstat-no" title="statement not covered">        return self.handleResponse(res);</span>
       });
     }
     else {
-<span class="cstat-no" title="statement not covered" >      req = https.request(options, <span class="fstat-no" title="function not covered" >function (res) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return self.handleResponse(res);</span>
+<span class="cstat-no" title="statement not covered">      req = https.request(options, <span class="fstat-no" title="function not covered">function (res) {</span></span>
+<span class="cstat-no" title="statement not covered">        return self.handleResponse(res);</span>
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (options.timeout) {</span>
-<span class="cstat-no" title="statement not covered" >      req.setTimeout(options.timeout, <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered">    if (options.timeout) {</span>
+<span class="cstat-no" title="statement not covered">      req.setTimeout(options.timeout, <span class="fstat-no" title="function not covered">function () {</span></span>
         // timeout occurs
-<span class="cstat-no" title="statement not covered" >        req.abort();</span>
+<span class="cstat-no" title="statement not covered">        req.abort();</span>
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    req.on('error', <span class="fstat-no" title="function not covered" >function (e) {</span></span>
-<span class="cstat-no" title="statement not covered" >      return self.callback(e);</span>
+<span class="cstat-no" title="statement not covered">    req.on('error', <span class="fstat-no" title="function not covered">function (e) {</span></span>
+<span class="cstat-no" title="statement not covered">      return self.callback(e);</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (this.payload &amp;&amp; (method === 'POST' || method === 'PUT' || method === 'PATCH')) {</span>
-<span class="cstat-no" title="statement not covered" >      req.write(this.payload);</span>
+<span class="cstat-no" title="statement not covered">    if (this.payload &amp;&amp; (method === 'POST' || method === 'PUT' || method === 'PATCH')) {</span>
+<span class="cstat-no" title="statement not covered">      req.write(this.payload);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    req.end();</span>
+<span class="cstat-no" title="statement not covered">    req.end();</span>
   }
 };
 &nbsp;
 module.exports = Request;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 21:01:15 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 16:23:53 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
