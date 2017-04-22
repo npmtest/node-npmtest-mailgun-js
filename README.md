@@ -1,4 +1,7 @@
-# test coverage for  [mailgun-js (v0.10.1)](https://github.com/bojand/mailgun-js)  [![npm package](https://img.shields.io/npm/v/npmtest-mailgun-js.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mailgun-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mailgun-js.svg)](https://travis-ci.org/npmtest/node-npmtest-mailgun-js)
+# npmtest-mailgun-js
+
+#### basic test coverage for  [mailgun-js (v0.10.1)](https://github.com/bojand/mailgun-js)  [![npm package](https://img.shields.io/npm/v/npmtest-mailgun-js.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mailgun-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mailgun-js.svg)](https://travis-ci.org/npmtest/node-npmtest-mailgun-js)
+
 #### Simple Node.js helper module for Mailgun API
 
 [![NPM](https://nodei.co/npm/mailgun-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mailgun-js)
@@ -94,7 +97,8 @@
         "docs:watch": "npm run docs:api && npm run docs:prepare && gitbook serve",
         "test": "mocha"
     },
-    "version": "0.10.1"
+    "version": "0.10.1",
+    "bin": {}
 }
 ```
 

@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "test coverage for [mailgun-js (v0.10.1)](https://github.com/bojand/mailgun-js) [![npm package](https://img.shields.io/npm/v/npmtest-mailgun-js.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mailgun-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mailgun-js.svg)](https://travis-ci.org/npmtest/node-npmtest-mailgun-js)",
+    "description": "#### basic test coverage for  [mailgun-js (v0.10.1)](https://github.com/bojand/mailgun-js)  [![npm package](https://img.shields.io/npm/v/npmtest-mailgun-js.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mailgun-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mailgun-js.svg)](https://travis-ci.org/npmtest/node-npmtest-mailgun-js)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "mailgun-js": "*",
@@ -36,5 +36,5 @@
         "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.3"
+    "version": "2017.4.23"
 }
