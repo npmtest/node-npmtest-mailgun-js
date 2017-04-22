@@ -7,8 +7,8 @@
 <tspan x="10" y="74">└─┬ mailgun-js@0.10.1 </tspan>
 <tspan x="10" y="90">  ├─┬ async@2.3.0 </tspan>
 <tspan x="10" y="106">  │ └── lodash@4.17.4 </tspan>
-<tspan x="10" y="122">  ├─┬ debug@2.6.3 </tspan>
-<tspan x="10" y="138">  │ └── ms@0.7.2 </tspan>
+<tspan x="10" y="122">  ├─┬ debug@2.6.4 </tspan>
+<tspan x="10" y="138">  │ └── ms@0.7.3 </tspan>
 <tspan x="10" y="154">  ├─┬ form-data@2.1.4 </tspan>
 <tspan x="10" y="170">  │ ├── asynckit@0.4.0 </tspan>
 <tspan x="10" y="186">  │ ├─┬ combined-stream@1.0.5 </tspan>
